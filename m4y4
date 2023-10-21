@@ -1,0 +1,23 @@
+@bot.command('set')
+async def set(ctx, tasks, minutes):
+    db.tasks.put({'description': tasks,
+                  'minutes': int(minutes),
+                  'user_id': ctx.author.id})
+    await ctx.send('Задача добавлена')
+
+
+@tasks.loop(minutes=1)
+async def called_once_a_minute():
+    todo_tasks = db.tasks.get_all()
+    for tasks in todo_tasks:
+        task.minutes -= 1
+        if task.minutes == 0:
+            massege_channel = await bot.fetch_user(task.user_id)
+            await message_chanel.send(task.decription)
+            db.tasks.delete('id', task.id)
+        else:
+            db.tasks.update('id', task.id, 'minutes', task.minutes)
+
+
+called_once_a_minute.start()
+bot.run(
