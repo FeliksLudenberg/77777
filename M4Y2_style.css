@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+}
+header {
+    height: 60px; /* Высота шапки */
+    background-color: #E092A4; /* Цвет фона  */
+    display: flex; /* Включаем гибкость блока */
+}
+ul {
+    list-style: none; /* Убираем маркеры в списке */
+    display: flex; /* Включаем гибкость блока */
+    justify-content: start; /* Выравниваем по левому краю ссылки */
+}
+  
+li a {
+    color: white; /* Цвет текста */
+    padding: 22px; /* Создаем поля вокруг ссылок по 22 пикселя */
+    font-size: 20px; /* Размер шрифта */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+}
+  
+li a:hover {
+    background-color: #71430E; /* Цвет фона при наведении на кнопку */
+}
+
+.card {
+    display: inline-block;
+    width: 40%;
+    margin: 3%;
+    background-color: #E092A4;
+    border: double 5px #E8949D;
+    text-decoration: none; 
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.main {
+    text-align: center;
+}
+
+.card:hover {
+    background-color: #95a5a6;
+}
+.prom {
+    color: #34495e;
+    font-size: 26px;
+    font-weight: bold;
+}
